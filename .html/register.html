@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/imagens/icon_green_bw_512.png">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="/.css/style2.css">
+    <script src="/.js/register.js" defer></script>
+    <link rel="icon" href="/imagens/icon_green_bw_512.png">
+</head>
+
+<body>
+    <main>
+        <form class="banner" onsubmit="fazerCadastro(event)">
+            <h1>Cadastro</h1>
+
+            <div class="input-container">
+                <input type="text" id="name" placeholder=" " required>
+                <label for="name">Nome</label>
+            </div>
+
+            <div class="input-container">
+                <input type="email" id="email" placeholder=" " required>
+                <label for="email">E-mail</label>
+            </div>
+
+            <div class="input-container">
+                <input type="password" id="password" placeholder=" " required>
+                <label for="password">Senha</label>
+            </div>
+
+            <div class="input-container">
+                <input type="password" id="confirm" placeholder=" " required>
+                <label for="confirm">Confirmar senha</label>
+            </div>
+
+            <p id="feedback" style="display:none; font-size:0.9rem; text-align:center;"></p>
+
+            <button type="submit">Cadastrar</button>
+
+            <p class="register-link">Já tem conta? <a href="login.html">Entrar</a></p>
+        </form>
+    </main>
+</body>
+
+</html>

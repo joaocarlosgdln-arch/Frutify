@@ -1,0 +1,758 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho a.ativo {
+    color: #52B788;
+    backdrop-filter: blur(5px);
+}
+
+
+body {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+
+.pai {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    background-size: cover;
+    position: relative;
+
+}
+
+.dad {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    max-width: auto;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    animation: anima_scroll 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+    transition: transform 0.8s ease, box-shadow 0.8s ease, opacity 0.8s ease;
+
+}
+
+.contato-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    width: auto;
+    max-width: 100%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.card {
+    align-items: center;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1.5px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: #2d6a4f 0px 4px 16px;
+    border-color: #52B788;
+}
+
+.card-icon {
+    font-size: 3rem;
+}
+
+.card-label {
+    font-size: 1.5rem;
+    color: #888;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.card-valor {
+    font-size: 1.2rem;
+    color: #1b4332;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a.card-valor:hover {
+    color: #52B788;
+    text-decoration: underline;
+}
+
+.card-desc {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.contato-cards .card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.contato-info {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: auto;
+    max-width: 100%;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    animation: anima_scroll 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+    transition: transform 0.8s ease, box-shadow 0.8s ease, opacity 0.8s ease;
+
+}
+
+.contato-info h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    color: #1b4332;
+}
+
+.linha-dupla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+
+}
+
+.campo label {
+    font-size: 0.85rem;
+    color: #555;
+    font-weight: bold;
+}
+
+.campo input,
+.campo textarea {
+    border: 1.5px solid #d0d0d0;
+    border-radius: 0.5rem;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.95rem;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: #222;
+    background: #fafafa;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    resize: vertical;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: #52B788;
+    box-shadow: 0 0 0 3px rgba(82, 183, 136, 0.18);
+    background: #fff;
+}
+
+.campo textarea {
+    min-height: 110px;
+}
+
+.btn-enviar {
+    background: linear-gradient(90deg, #2d6a4f, #52B788);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 2rem;
+    padding: 0.7rem 2rem;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: bold;
+    align-self: flex-start;
+    transition: all 0.2s;
+}
+
+.btn-enviar:hover {
+    scale: 1.05;
+    box-shadow: 0 4px 12px rgba(45, 106, 79, 0.3);
+}
+
+.toast {
+    display: none;
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: #d8f3dc;
+    border: 1.5px solid #52B788;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    color: #1b4332;
+}
+
+.toast.visivel {
+    display: block;
+
+}
+
+.controles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.janela {
+    overflow: hidden;
+    width: min(56rem, 100vw - 5rem);
+}
+
+.trilho {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.cabecalho {
+    background-color: #2d6a4f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 0 2rem;
+    height: 6.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.cabecalho .logo {
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
+    margin-left: 4rem;
+}
+
+.cabecalho ul,
+.cabecalho nav {
+    display: flex;
+    gap: 2rem;
+    margin: 0 28rem;
+
+}
+
+.cabecalho .logo:hover {
+    scale: 1;
+
+}
+
+.cabecalho p {
+    font-size: 2.5rem;
+    color: #ffffff;
+    font-weight: bold;
+    margin-left: 0.5rem;
+
+}
+
+.cabecalho li {
+    list-style: none;
+    font-size: 2rem;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    white-space: nowrap;
+}
+
+.cabecalho a {
+    text-decoration: none;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.cabecalho a:hover {
+    color: #9dd4b6;
+
+    backdrop-filter: blur(5px);
+}
+
+.cabecalho.active a {
+    color: #9dd4b6;
+    backdrop-filter: blur(5px);
+}
+
+
+#btn-abrir-sobre,
+#btn-abrir-termos {
+    padding: 12px 24px;
+    background-color: #2d6a4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+#btn-abrir-sobre:hover,
+#btn-abrir-termos:hover {
+    background-color: #1b4332;
+}
+
+#modal-sobre,
+#modal-termos {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    color: #333333;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+    padding: 0;
+    margin: 0;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#modal-sobre::backdrop,
+#modal-termos::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+.conteudo-modal {
+    padding: 30px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+#modal-sobre .conteudo-modal p,
+#modal-termos .conteudo-modal p {
+    color: #333333 !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 2rem;
+}
+
+#btn-fechar-sobre,
+#btn-fechar-termos {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#btn-fechar-sobre:hover,
+#btn-fechar-termos:hover {
+    background-color: #000;
+}
+
+.login {
+    background-color: #1b4332;
+    color: #fff;
+    box-shadow: #d0d0d0 0px 0px 4px;
+    border: none;
+    cursor: pointer;
+    border-radius: 2rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    white-space: nowrap;
+    height: 2.5rem;
+    width: auto;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.login:hover {
+    background-color: #000;
+    color: white;
+    scale: 1.1;
+}
+
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 0;
+}
+
+
+.banner {
+    width: 100%;
+    height: 30rem;
+    background-color: #1b4332;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    color: #9dd4b6;
+    background-image: url(/imagens/banner.png);
+    margin-bottom: 3rem;
+    background-size: cover;
+    position: relative;
+
+
+
+}
+
+
+.banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.banner p {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+
+.destaques {
+    width: 100%;
+    height: 29rem;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+    border-radius: 0.1rem;
+    animation: anima_scroll 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+    transition: transform 0.8s ease, box-shadow 0.8s ease, opacity 0.8s ease;
+
+
+}
+
+@keyframes anima_scroll {
+    from {
+        opacity: 0;
+        scale: 0.95;
+        transform: translateY(20px);
+        filter: blur(10px);
+
+
+    }
+
+
+    to {
+        opacity: 1;
+        scale: 1;
+        transform: translateY(0);
+        filter: blur(0);
+
+
+    }
+}
+
+
+.destaques h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #222;
+}
+
+.anterior {
+    background-color: #ffffff;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+.anterior img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+}
+
+.destaques .produto {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    width: 20rem;
+    height: 19rem;
+    margin: 0.8rem;
+    cursor: pointer;
+
+}
+
+.produto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    box-shadow: #2d6a4f 0px 4px 12px;
+
+}
+
+.produto img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: contain;
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+.produto h4 {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.produto p {
+    font-size: 0.95rem;
+    color: #2d6a4f;
+    font-weight: bold;
+}
+
+.proximo {
+    background-color: #ffffff;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+.proximo img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+}
+
+.contato-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+.contato-info h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.contato-info p {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.contato-info li {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.8rem;
+    list-style: none;
+}
+
+.contato-info a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.contato-info a:hover {
+    color: #52B788;
+    text-decoration: underline;
+}
+
+.quebra {
+    background-color: #2d6a4f;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+    margin-top: auto;
+}
+
+.quebra li,
+.quebra p {
+    font-size: 0.9rem;
+    color: #ffffff;
+    list-style: none;
+}
+
+.quebra a {
+    text-decoration: none;
+
+    font-size: 0.9rem;
+}
+
+.quebra a:hover {
+    color: #52B788;
+    text-decoration: overline;
+}
+
+
+
+.produto:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.produto:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.produto:nth-child(3) {
+    animation-delay: 0.25s;
+}
+
+.produto:nth-child(4) {
+    animation-delay: 0.35s;
+}
+
+.produto:nth-child(5) {
+    animation-delay: 0.45s;
+}
+
+.produto:nth-child(6) {
+    animation-delay: 0.55s;
+}
+
+@media (max-width: 600px) {
+    .linha-dupla {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .cabecalho {
+        height: 5rem;
+        padding: 0 1.5rem;
+    }
+
+    .cabecalho .logo {
+        width: 4rem;
+        height: 4rem;
+        margin-left: 0.5rem;
+    }
+
+    .cabecalho p {
+        font-size: 1rem;
+    }
+
+    .cabecalho li {
+        font-size: 1rem;
+        margin-left: auto;
+    }
+
+    .banner {
+        height: 22rem;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .cabecalho {
+        height: 4rem;
+        padding: 0 1rem;
+    }
+
+    .logo {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .cabecalho li {
+        font-size: 0.85rem;
+    }
+
+    .login {
+        margin-left: 0;
+        font-size: 0.75rem;
+        padding: 0.3rem 0.8rem;
+        height: auto;
+    }
+
+    .janela {
+        width: calc(100vw - 6rem);
+        /* espaço pros botões de seta */
+    }
+
+    .destaques .produto {
+        width: calc(100vw - 8rem);
+        /* um card por vez na tela */
+        height: auto;
+        min-height: 14rem;
+        margin: 0.4rem;
+        flex-shrink: 0;
+    }
+
+    .produto img {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .banner {
+        height: 16rem;
+        margin-bottom: 2rem;
+    }
+
+    .banner h1 {
+        font-size: 1.5rem;
+    }
+
+    .banner p {
+        font-size: 0.95rem;
+    }
+
+    .destaques h2 {
+        font-size: 1.3rem;
+    }
+
+    .quebra {
+        gap: 0.8rem;
+        padding: 0.8rem 1rem;
+    }
+
+    .quebra li,
+    .quebra p,
+    .quebra a {
+        font-size: 0.75rem;
+    }
+}

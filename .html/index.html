@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="refresh" content="100">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutify</title>
+    <link rel="stylesheet" href="/.css/style.css">
+    <link rel="icon" href="/imagens/icon_green_bw_512.png">
+    <script src="/.js/script.js" defer></script>
+</head>
+
+<body>
+    <div class="pai">
+
+        <header class="cabecalho">
+
+            <a href="index.html"> <img src="/imagens/icon_green_bw_512.png" alt="Logo da Frutify" class="logo"></a>
+            <p>Frutify</p>
+            <ul>
+                <li><a href="index.html" class="ativo">Inicio</a></li>
+                <li><a href="catalogo.html">Catalogo</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <button class="login" onclick="window.location.href='login.html'">Entrar</button>
+        </header>
+
+        <main class="main">
+            <section class="banner">
+                <div class="not-blur">
+                    <h1>Bem-vindo à Frutify!</h1>
+                    <p>Descubra a frescura e a qualidade das nossas frutas selecionadas.</p>
+                </div>
+            </section>
+
+            <section class="destaques">
+                <h2>Ofertas em Destaque</h2>
+                <div class="controles">
+                    <button class="anterior"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-chevron-left-icon lucide-chevron-left">
+                            <path d="m15 18-6-6 6-6" />
+                        </svg></button>
+                    <div class="janela">
+                        <div class="trilho">
+                            <div class="produto">
+                                <img src="/imagens/maca-argentina--1-unidade-aprox--200g--83orvw62e3.png"
+                                    alt="Maçã Argentina" class="produto-destaque">
+                                <h4>Maçã Argentina</h4>
+                                <p>R$ 4,99 / kg</p>
+                            </div>
+                            <div class="produto">
+                                <img src="/imagens/banana-nanica.png" alt="Banana Nanica" class="produto-imagem">
+                                <h4>Banana Nanica</h4>
+                                <p>R$ 2,99 / kg</p>
+                            </div>
+                            <div class="produto">
+                                <img src="/imagens/Laranja-pera.png" alt="Laranja Pera" class="produto-imagem">
+                                <h4>Laranja Pera</h4>
+                                <p>R$ 3,49 / kg</p>
+                            </div>
+                            <div class="produto">
+                                <img src="/imagens/purple-or-blue-grape-isolated-on-transparent-background-high-resoulation-png-image_10923763.png"
+                                    alt="Uva Roxa" class="produto-imagem">
+                                <h4>Uva Roxa</h4>
+                                <p>R$ 5,99 / kg</p>
+                            </div>
+                            <div class="produto">
+                                <img src="/imagens/watermelon-transparent-background-free-png.png" alt="Melancia"
+                                    class="produto-imagem">
+                                <h4>Melancia</h4>
+                                <p>R$ 1,99 / kg</p>
+                            </div>
+                            <div class="produto">
+                                <img src="/imagens/pineapple-transparent-background-png.png" alt="Abacaxi"
+                                    class="produto-imagem">
+                                <h4>Abacaxi</h4>
+                                <p>R$ 3,99 / kg</p>
+                            </div>
+                            <div class="produto">
+                                <img src="/imagens/Mango-PNG-Image-Background.png" alt="Manga" class="produto-imagem">
+                                <h4>Manga</h4>
+                                <p>R$ 4,49 / kg</p>
+                            </div>
+                            <div class="produto">
+                                <img src="/imagens/9-2-kiwi-png-clipart.png" alt="Kiwi" class="produto-imagem">
+                                <h4>Kiwi</h4>
+                                <p>R$ 6,99 / kg</p>
+                            </div>
+                            <div class="produto">
+                                <img src="/imagens/peach-transparent-background-png.png" alt="Pêssego"
+                                    class="produto-imagem">
+                                <h4>Pêssego</h4>
+                                <p>R$ 4,79 / kg</p>
+                            </div>
+                            <div class="produto">
+                                <img src="/imagens/fresh-plum-fruit-pair-isolated-on-transparent-background-png.png"
+                                    alt="Ameixa" class="produto-imagem">
+                                <h4>Ameixa</h4>
+                                <p>R$ 5,49 / kg</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="proximo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-chevron-right-icon lucide-chevron-right">
+                            <path d="m9 18 6-6-6-6" />
+                        </svg></button>
+                </div>
+            </section>
+    </div>
+    </main>
+
+    <footer class="quebra">
+        <li>
+            <p>Frutify - Sua loja de frutas online</p>
+        </li>
+
+        <button id="btn-abrir-sobre">Sobre nós</button>
+        <button id="btn-abrir-termos">Termos de Serviço</button>
+        <li>
+            <p>&copy; 2026 Frutify. Todos os direitos reservados.</p>
+        </li>
+    </footer>
+
+    <dialog id="modal-sobre">
+        <div class="conteudo-modal">
+            <h2>Sobre nos</h2>
+            <p>
+
+                Sobre a Frutify
+                <br>
+                A Frutify nasceu com um propósito claro: transformar a forma como as pessoas compram, conhecem e
+                consomem frutas. Mais do que uma loja, somos uma plataforma que conecta qualidade, informação e
+                praticidade em um só lugar.
+                <br>
+                Fundada a partir da percepção de que o mercado tradicional muitas vezes não oferece transparência,
+                variedade e orientação ao consumidor, a Frutify foi criada para preencher essa lacuna. Nosso
+                objetivo é proporcionar uma experiência completa, onde cada cliente não apenas adquire produtos
+                frescos, mas também entende sua origem, benefícios e melhores formas de consumo.
+                <br>
+                Trabalhamos diretamente com produtores selecionados, priorizando frutas frescas, sazonais e de alta
+                qualidade. Essa parceria garante não só um padrão elevado dos nossos produtos, mas também incentiva
+                a produção local e sustentável.
+                <br>
+                Um dos nossos principais diferenciais é o catálogo inteligente. Em nossa plataforma, cada fruta é
+                apresentada com informações detalhadas, incluindo características, valor nutricional e sugestões de
+                uso. Isso permite que nossos clientes façam escolhas mais conscientes e descubram novas opções de
+                forma simples e acessível.
+                <br>
+                Além disso, buscamos constantemente inovação e praticidade. A Frutify oferece uma experiência
+                digital intuitiva, facilitando a navegação, a seleção de produtos e a personalização de pedidos,
+                sempre com foco na comodidade do cliente.
+                <br>
+                Nossa missão é aproximar as pessoas de uma alimentação mais natural, saudável e informada. Já nossa
+                visão é nos tornar referência no mercado de frutas, unindo tecnologia, qualidade e confiança.
+                <br>
+                Na Frutify, acreditamos que cada fruta carrega mais do que sabor — carrega história, saúde e conexão
+                com a natureza. E é isso que entregamos todos os dias.
+            </p>
+            <button id="btn-fechar-sobre">Fechar</button>
+        </div>
+    </dialog>
+
+    <dialog id="modal-termos">
+        <div class="conteudo-modal">
+            <h2>Termos de Serviço</h2>
+            <p>
+
+                Última atualização: 20/05/2026
+                <br>
+                Bem-vindo à Frutify. Ao acessar ou utilizar nosso site, você concorda com os termos e
+                condições
+                abaixo. Recomendamos a leitura atenta deste documento.
+                <br>
+                1. Sobre a Frutify
+                <br>
+                A Frutify é uma plataforma digital voltada à comercialização e catálogo de frutas,
+                oferecendo
+                informações detalhadas sobre produtos, além da possibilidade de compra online.
+                <br>
+                2. Aceitação dos Termos
+                <br>
+                Ao acessar nosso site, o usuário declara estar de acordo com estes Termos de Serviço e com
+                todas as
+                leis e regulamentos aplicáveis. Caso não concorde, recomendamos não utilizar a plataforma.
+                <br>
+                3. Uso da Plataforma
+                <br>
+                O usuário compromete-se a:
+                <br>
+                Utilizar o site de forma legal e ética
+                Não violar direitos de terceiros
+                Não tentar acessar áreas restritas sem autorização
+                Fornecer informações verídicas ao realizar cadastros ou compras
+                <br>
+                A Frutify se reserva o direito de suspender ou encerrar contas que violem estas condições.
+                <br>
+                4. Produtos e Disponibilidade
+                <br>
+                A Frutify trabalha com frutas frescas e sazonais. Por isso:
+                <br>
+                A disponibilidade pode variar conforme a época do ano
+                Os produtos podem apresentar variações naturais de cor, tamanho e formato
+                Nos reservamos o direito de alterar preços e estoque sem aviso prévio
+                <br>
+                5. Pedidos e Pagamentos
+                <br>
+                Ao realizar um pedido:
+                <br>
+                O usuário concorda em fornecer dados corretos e completos
+                O pedido só será confirmado após a aprovação do pagamento
+                A Frutify pode recusar ou cancelar pedidos em caso de inconsistências
+                6. Entregas
+                <br>
+                Os prazos de entrega são estimados e podem variar
+                O cliente deve garantir que haverá alguém para receber o pedido
+                Eventuais problemas devem ser comunicados dentro de um prazo razoável
+                <br>
+                7. Cancelamentos e Reembolsos
+                <br>
+                O cliente pode solicitar cancelamento ou reembolso em casos como:
+                <br>
+                Produto entregue em desacordo com o pedido
+                Problemas de qualidade
+                <br>
+                A análise será feita pela equipe da Frutify conforme cada situação.
+                <br>
+                8. Propriedade Intelectual
+                <br>
+                Todo o conteúdo do site (textos, imagens, logotipo, design) é de propriedade da Frutify e
+                não pode
+                ser utilizado sem autorização prévia.
+                <br>
+                9. Limitação de Responsabilidade
+                <br>
+                A Frutify não se responsabiliza por:
+                <br>
+                Problemas decorrentes do uso inadequado da plataforma
+                Interrupções temporárias do site
+                Danos indiretos causados ao usuário
+                <br>
+                10. Privacidade
+                <br>
+                O uso de dados pessoais é tratado conforme nossa Política de Privacidade. Ao utilizar o
+                site, você
+                concorda com o uso dessas informações.
+                <br>
+                11. Alterações nos Termos
+                <br>
+                A Frutify pode atualizar estes Termos de Serviço a qualquer momento. Recomendamos a revisão
+                periódica desta página.
+            </p>
+            <button id="btn-fechar-termos">Fechar e Aceitar</button>
+
+
+
+
+        </div>
+    </dialog>
+</body>
+
+</html>
