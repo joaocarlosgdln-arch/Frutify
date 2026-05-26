@@ -43,3 +43,16 @@ window.addEventListener("DOMContentLoaded", function () {
     };
   }
 });
+document.getElementById("btn-abrir-sobre").addEventListener("click", () => {
+  document.getElementById("modal-sobre").showModal();
+});
+document.getElementById("btn-fechar-sobre").addEventListener("click", () => {
+  document.getElementById("modal-sobre").close();
+});
+
+document.getElementById("btn-abrir-termos").addEventListener("click", () => {
+  document.getElementById("modal-termos").showModal();
+});
+document.getElementById("btn-fechar-termos").addEventListener("click", () => {
+  document.getElementById("modal-termos").close();
+});
